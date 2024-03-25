@@ -11,12 +11,14 @@
   "license": "ISC",
   "devDependencies": {
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2"
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix"
+      "eslint --fix",
+      "prettier --write"
     ],
-    "**/*": ""
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
