@@ -1,0 +1,23 @@
+{
+  "name": "@comics/server",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "build": "pnpm run build:clean && pnpm run build:tsup",
+    "build:clean": "rm -rf ./dist",
+    "build:tsup": "tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/pkg-dir": "^2.0.1",
+    "node:path": "link:@types/node:path",
+    "path": "^0.12.7",
+    "pkg-dir": "^8.0.0",
+    "tsup": "^8.0.2"
+  }
+}
