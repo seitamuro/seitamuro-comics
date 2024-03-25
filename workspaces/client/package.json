@@ -1,0 +1,12 @@
+{
+  "name": "@comics/client",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "echo start in client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
