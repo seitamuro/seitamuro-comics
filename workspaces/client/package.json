@@ -4,9 +4,18 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "echo start in client"
+    "start": "echo start in client",
+    "build": "next build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.70"
+  }
 }
