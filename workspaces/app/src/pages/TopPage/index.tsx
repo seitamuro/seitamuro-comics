@@ -4,9 +4,14 @@ export const TopPage: React.FC = () => {
   return (
     <>
       <div>This is TopPage.</div>
-      <div>
-        <Link to="/not-found">Go to Not Found Page</Link>
-      </div>
+      <ul>
+        <li>
+          <Link to="/counter">Go to Counter Page</Link>
+        </li>
+        <li>
+          <Link to="/not-found">Go to Not Found Page</Link>
+        </li>
+      </ul>
     </>
   );
 };
