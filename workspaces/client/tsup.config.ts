@@ -11,20 +11,22 @@ export default defineConfig(async (): Promise<Options[]> => {
 
   return [
     {
+      bundle: true,
       clean: true,
       entry: {
         client: path.resolve(PACKAGE_DIR, 'src/index.tsx'),
       },
-      format: 'cjs',
+      format: 'esm',
       metafile: true,
       minify: false,
-      noExternal: [/@comic\/.*/],
+      noExternal: [/.*/],
       outDir: OUTPUT_DIR,
       shims: true,
       sourcemap: true,
-      splitting: false,
-      target: 'node18',
-      treeshake: false,
+      splitting: true,
+      platform: 'browser',
+      target: ['chrome58', 'firefox57', 'safari11', 'edge18'],
+      treeshake: true,
     },
   ];
 });

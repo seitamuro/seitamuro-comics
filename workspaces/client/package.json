@@ -5,7 +5,10 @@
   "private": true,
   "scripts": {
     "start": "echo start in client",
-    "build:tsup": "tsup"
+    "build": "pnpm run build:clean && pnpm run build:tsup && pnpm run build:copy",
+    "build:clean": "rm -rf dist",
+    "build:tsup": "tsup",
+    "build:copy": "cp index.html dist/index.html"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +21,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.70",
+    "live-server": "^1.2.2",
     "path": "^0.12.7",
     "pkg-dir": "^8.0.0"
   }
