@@ -18,7 +18,7 @@ export default defineConfig(async (): Promise<Options[]> => {
       format: 'cjs',
       metafile: true,
       minify: false,
-      noExternal: [/@comic\/.*/],
+      noExternal: [/@comics\/.*/],
       outDir: OUTPUT_DIR,
       shims: true,
       sourcemap: true,

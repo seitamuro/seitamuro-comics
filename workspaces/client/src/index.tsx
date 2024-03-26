@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 
 const App = () => {
-  return <div>hello world</div>;
+  return <div>This is @comics/client/index.tsx</div>;
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
