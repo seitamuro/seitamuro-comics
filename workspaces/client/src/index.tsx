@@ -1,7 +1,5 @@
 import ReactDOM from 'react-dom';
 
-const App = () => {
-  return <div>This is @comics/client/index.tsx</div>;
-};
+import { ClientApp } from '@comics/app/src/index';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ClientApp />, document.getElementById('root'));
