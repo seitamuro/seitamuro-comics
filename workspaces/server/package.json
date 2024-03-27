@@ -15,14 +15,19 @@
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/pkg-dir": "^2.0.1",
+    "@types/react": "^18.2.70",
+    "@types/react-dom": "^18.2.22",
     "node:path": "link:@types/node:path",
     "path": "^0.12.7",
     "pkg-dir": "^8.0.0",
     "tsup": "^8.0.2"
   },
   "dependencies": {
+    "@comics/app": "workspace:^",
     "@hono/node-server": "^1.9.0",
     "@node-kit/pnpm-workspace-root": "^3.2.0",
-    "hono": "^4.1.4"
+    "hono": "^4.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

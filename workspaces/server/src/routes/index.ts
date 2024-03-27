@@ -1,10 +1,12 @@
 import { Hono } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 
+import { reactServer } from './reactServer';
 import { staticApp } from './static';
 
 const app = new Hono();
 
+app.route('/', reactServer);
 app.route('/', staticApp);
 
 app.onError((cause) => {

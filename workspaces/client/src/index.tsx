@@ -1,5 +1,9 @@
-import ReactDOM from 'react-dom';
+import { hydrateRoot } from 'react-dom/client';
 
-import { ClientApp } from '@comics/app/src/index';
+import { App } from '@comics/app/src/index';
 
-ReactDOM.render(<ClientApp />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+
+if (rootElement === null) throw new Error('rootElement was not found');
+
+hydrateRoot(rootElement, <App />);

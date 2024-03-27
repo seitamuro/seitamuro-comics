@@ -85,6 +85,9 @@ importers:
 
   workspaces/server:
     dependencies:
+      '@comics/app':
+        specifier: workspace:^
+        version: link:../app
       '@hono/node-server':
         specifier: ^1.9.0
         version: 1.9.0
@@ -94,6 +97,12 @@ importers:
       hono:
         specifier: ^4.1.4
         version: 4.1.4
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
     devDependencies:
       '@types/node':
         specifier: ^20.11.30
@@ -101,6 +110,12 @@ importers:
       '@types/pkg-dir':
         specifier: ^2.0.1
         version: 2.0.1
+      '@types/react':
+        specifier: ^18.2.70
+        version: 18.2.70
+      '@types/react-dom':
+        specifier: ^18.2.22
+        version: 18.2.22
       node:path:
         specifier: link:@types/node:path
         version: link:@types/node:path
@@ -618,6 +633,12 @@ packages:
 
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+
+  /@types/react-dom@18.2.22:
+    resolution: {integrity: sha512-fHkBXPeNtfvri6gdsMYyW+dW7RXFo6Ad09nLFK0VQWR7yGLai/Cyvyj696gbwYvBnhGtevUG9cET0pmUbMtoPQ==}
+    dependencies:
+      '@types/react': 18.2.70
+    dev: true
 
   /@types/react@18.2.70:
     resolution: {integrity: sha512-hjlM2hho2vqklPhopNkXkdkeq6Lv8WSZTpr7956zY+3WS5cfYUewtCzsJLsbW5dEv3lfSeQ4W14ZFeKC437JRQ==}
