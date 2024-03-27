@@ -6,8 +6,8 @@ import { staticApp } from './static';
 
 const app = new Hono();
 
-app.route('/', reactServer);
 app.route('/', staticApp);
+app.route('/', reactServer);
 
 app.onError((cause) => {
   console.error(cause);

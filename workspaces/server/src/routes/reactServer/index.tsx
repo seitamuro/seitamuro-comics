@@ -1,15 +1,15 @@
 import { Hono } from 'hono';
-import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom/server';
 
-import { App } from '@comics/app/src';
+import { ClientApp } from '@comics/app/src';
 
 const app = new Hono();
 
 const createHtml = (component: string) => `
   <html>
     <head>
-      <script src="/client.mjs" async defer></script>
+      <script type="module" src="/client.mjs"></script>
     </head>
     <body>
       <div id="root">${component}</div>
@@ -17,15 +17,13 @@ const createHtml = (component: string) => `
   </html>
 `;
 
-app.get('/', (c) => {
-  console.log('catch');
-  const element = createElement(App);
-  console.log('created element');
-  console.log(element);
-  const comp = renderToString(createElement(App));
-  console.log('rendered');
+app.get('*', (c) => {
+  const comp = renderToString(
+    <StaticRouter location={c.req.path}>
+      <ClientApp />
+    </StaticRouter>,
+  );
   const view = createHtml(comp);
-  console.log(view);
   return c.html(view);
 });
 
