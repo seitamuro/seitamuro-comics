@@ -6,8 +6,8 @@ const main = async () => {
   const author = await prisma.user.findUnique({ where: { email: 'seitamuro0210@gmail.com' } });
   await prisma.post.create({
     data: {
-      title: 'Hello World',
-      conetent: 'This is my first post',
+      title: 'Hello World2',
+      content: 'This is my second post',
       published: false,
       author: {
         connect: {

@@ -9,7 +9,9 @@
     "build:clean": "rm -rf ./dist",
     "build:tsup": "tsup",
     "generate:env": "echo DATABASE_URL=file:$(pwd)/database/database.db > .env",
-    "exec:ts-node": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' pnpm exec ts-node"
+    "exec:ts-node": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' pnpm exec ts-node",
+    "prisma:migration": "pnpm exec prisma migrate dev",
+    "prisma:generate": "pnpm exec prisma generate && echo 'please reload vscode window to apply results.'"
   },
   "keywords": [],
   "author": "",
