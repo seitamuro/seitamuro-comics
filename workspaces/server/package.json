@@ -7,7 +7,9 @@
     "start": "node ./dist/server.js",
     "build": "pnpm run build:clean && pnpm run build:tsup",
     "build:clean": "rm -rf ./dist",
-    "build:tsup": "tsup"
+    "build:tsup": "tsup",
+    "generate:env": "echo DATABASE_URL=file:$(pwd)/database/database.db > .env",
+    "exec:ts-node": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' pnpm exec ts-node"
   },
   "keywords": [],
   "author": "",
@@ -21,13 +23,17 @@
     "node:path": "link:@types/node:path",
     "path": "^0.12.7",
     "pkg-dir": "^8.0.0",
+    "prisma": "^5.11.0",
     "react-router-dom": "^6.22.3",
-    "tsup": "^8.0.2"
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
   },
   "dependencies": {
     "@comics/app": "workspace:^",
     "@hono/node-server": "^1.9.0",
     "@node-kit/pnpm-workspace-root": "^3.2.0",
+    "@prisma/client": "5.11.0",
     "hono": "^4.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

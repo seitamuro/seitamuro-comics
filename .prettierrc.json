@@ -3,5 +3,5 @@
   "printWidth": 120,
   "trailingComma": "all",
   "arrowParens": "always",
-  "plugins": []
+  "plugins": ["prettier-plugin-prisma"]
 }
