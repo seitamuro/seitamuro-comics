@@ -5,10 +5,9 @@
   "private": true,
   "scripts": {
     "start": "echo start in client",
-    "build": "pnpm run build:clean && pnpm run build:tsup && pnpm run build:copy",
+    "build": "pnpm run build:clean && pnpm run build:tsup",
     "build:clean": "rm -rf dist",
-    "build:tsup": "tsup",
-    "build:copy": "cp index.html dist/index.html"
+    "build:tsup": "tsup"
   },
   "keywords": [],
   "author": "",

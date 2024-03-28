@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
 import { ClientApp } from '@comics/app/src/index';
-import { BrowserRouter } from 'react-router-dom';
 
 const main = () => {
   const rootElement = document.getElementById('root');
