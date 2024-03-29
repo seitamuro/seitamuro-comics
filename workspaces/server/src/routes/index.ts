@@ -1,11 +1,13 @@
 import { Hono } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 
+import { helloApi } from '../api/hello';
 import { reactServer } from './reactServer';
 import { staticApp } from './static';
 
 const app = new Hono();
 
+app.route('/api', helloApi);
 app.route('/', staticApp);
 app.route('/', reactServer);
 
