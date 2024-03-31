@@ -1,9 +1,0 @@
-{
-  "singleQuote": true,
-  "printWidth": 120,
-  "trailingComma": "all",
-  "arrowParens": "always",
-  "bracketSpacing": true,
-  "singleAttributePerLine": true,
-  "plugins": ["prettier-plugin-prisma"]
-}

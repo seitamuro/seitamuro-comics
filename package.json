@@ -2,15 +2,24 @@
   "name": "seitamuro-comics",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "start": "pnpm --filter \"@comics/server\" --parallel run start",
-    "build": "pnpm --filter \"@comics/server\" --filter \"@comics/client\" --parallel run build",
-    "prepare": "husky"
-  },
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "scripts": {
+    "build": "pnpm --filter \"@comics/server\" --filter \"@comics/client\" --parallel run build",
+    "prepare": "husky",
+    "start": "pnpm --filter \"@comics/server\" --parallel run start",
+    "test": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "devDependencies": {
+    "@seitamuro/configs": "github:seitamuro/configs#895ea8c565db5071732305d280f5f1059200aace",
     "@types/node": "^20.11.30",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "eslint": "^8.57.0",
@@ -20,12 +29,5 @@
     "prettier-plugin-prisma": "^5.0.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "**/*": "prettier --write --ignore-unknown"
   }
 }
