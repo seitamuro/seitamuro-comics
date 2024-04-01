@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CustomButton } from '../../../foundation/components/CustomButton';
+import { CustomButton } from '../../foundation/components/CustomButton';
 
 export const CustomStylePage = () => {
   const [clicked, setClicked] = useState(false);

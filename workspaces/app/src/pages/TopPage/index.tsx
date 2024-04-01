@@ -1,17 +1,24 @@
-import { Link } from 'react-router-dom';
+import { Box } from '../../foundation/components/Box';
+import { Flex } from '../../foundation/components/Flex';
+import { Space } from '../../foundation/styles/variables';
+import { CoverSection } from './internal/CoverSection';
 
 export const TopPage: React.FC = () => {
   return (
-    <>
-      <div>This is TopPage.</div>
-      <ul>
-        <li>
-          <Link to="/counter">Go to Counter Page</Link>
-        </li>
-        <li>
-          <Link to="/not-found">Go to Not Found Page</Link>
-        </li>
-      </ul>
-    </>
+    <Flex
+      align="flex-start"
+      direction="column"
+      gap={Space * 2}
+      justify="center"
+      p={Space * 2}
+    >
+      <Box
+        as="header"
+        maxWidth="100%"
+        width="100%"
+      >
+        <CoverSection />
+      </Box>
+    </Flex>
   );
 };
