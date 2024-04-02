@@ -11,6 +11,7 @@ import { Color, Radius, Space, Typography } from '../../../foundation/styles/var
 
 const _Wrapper = styled.li`
   width: 100%;
+  list-style-type: none;
 `;
 
 const _Link = styled(Link)`
