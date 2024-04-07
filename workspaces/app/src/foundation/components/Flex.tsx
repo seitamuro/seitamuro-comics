@@ -1,6 +1,8 @@
 import type * as CSS from 'csstype';
 import styled from 'styled-components';
 
+import { addUnitIfNeeded } from '../../lib/css/addUnitNeeded';
+
 const _Flex = styled.div<{
   $align?: CSS.Property.AlignItems;
   $direction?: CSS.Property.FlexDirection;
@@ -25,12 +27,11 @@ const _Flex = styled.div<{
   gap: ${(props) => props.$gap};
   justify-content: ${(props) => props.$justify};
   padding: ${(props) => props.$p};
-  padding-bottom: ${(props) => props.$pb};
-  padding-left: ${(props) => props.$pl};
-  padding-right: ${(props) => props.$pr};
-  padding-top: ${(props) => props.$pt};
-  position: ${(props) => props.$position};
-  padding: ${(props) => `${props.$py}px ${props.$px}px`};
+  padding-bottom: ${({ $pb, $py }) => addUnitIfNeeded($py ?? $pb)};
+  padding-left: ${({ $pl, $px }) => addUnitIfNeeded($px ?? $pl)};
+  padding-right: ${({ $pr, $px }) => addUnitIfNeeded($px ?? $pr)};
+  padding-top: ${({ $pt, $py }) => addUnitIfNeeded($py ?? $pt)};
+  padding: ${({ $p }) => addUnitIfNeeded($p)};
 `;
 
 type Props = {

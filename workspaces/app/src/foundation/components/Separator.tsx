@@ -3,21 +3,23 @@ import { Color } from '../styles/variables';
 
 type SeparatorType = 'dashed' | 'dotted' | 'solid' | 'rounded';
 
+const width = 1;
+
 const _DashedSeparator = styled.hr`
-  border-top: 3px dashed ${Color.MONO_40};
+  border-top: ${width}px dashed ${Color.MONO_40};
 `;
 
 const _DottedSeparator = styled.hr`
-  border-top: 3px dotted ${Color.MONO_40};
+  border-top: ${width}px dotted ${Color.MONO_40};
 `;
 
 const _SolidSeparator = styled.hr`
-  border-top: 3px solid ${Color.MONO_40};
+  border-top: ${width}px solid ${Color.MONO_40};
 `;
 
 const _RoundedSeparator = styled.hr`
-  border-top: 8px solid ${Color.MONO_40};
-  border-radius: 5px;
+  border-top: ${width + 5}px solid ${Color.MONO_40};
+  border-radius: ${width + 2}px;
 `;
 
 type Props = {

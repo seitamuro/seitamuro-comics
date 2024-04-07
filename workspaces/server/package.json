@@ -1,21 +1,33 @@
 {
   "name": "@comics/server",
   "version": "1.0.0",
-  "description": "",
   "private": true,
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "scripts": {
-    "start": "node ./dist/server.js",
     "build": "pnpm run build:clean && pnpm run build:tsup",
     "build:clean": "rm -rf ./dist",
     "build:tsup": "tsup",
-    "generate:env": "echo DATABASE_URL=file:$(pwd)/database/database.db > .env",
     "exec:ts-node": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' pnpm exec ts-node",
+    "generate:env": "echo DATABASE_URL=file:$(pwd)/database/database.db > .env",
+    "prisma:generate": "pnpm exec prisma generate && echo 'please reload vscode window to apply results.'",
     "prisma:migration": "pnpm exec prisma migrate dev",
-    "prisma:generate": "pnpm exec prisma generate && echo 'please reload vscode window to apply results.'"
+    "start": "node ./dist/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "@comics/app": "workspace:^",
+    "@hono/node-server": "^1.9.0",
+    "@node-kit/pnpm-workspace-root": "^3.2.0",
+    "@prisma/client": "5.11.0",
+    "hono": "^4.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.22.3",
+    "styled-components": "^6.1.8",
+    "zod": "^3.22.4"
+  },
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/pkg-dir": "^2.0.1",
@@ -30,16 +42,5 @@
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
-  },
-  "dependencies": {
-    "@comics/app": "workspace:^",
-    "@hono/node-server": "^1.9.0",
-    "@node-kit/pnpm-workspace-root": "^3.2.0",
-    "@prisma/client": "5.11.0",
-    "hono": "^4.1.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router": "^6.22.3",
-    "zod": "^3.22.4"
   }
 }
